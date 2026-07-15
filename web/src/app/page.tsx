@@ -32,9 +32,13 @@ export default function MarketingPage() {
           {MODULES.map((mod) => (
             <div
               key={mod.slug}
-              className="flex flex-col gap-2 rounded-lg border bg-background p-4"
+              className="flex flex-col gap-3 rounded-lg border bg-background p-4"
             >
-              <mod.icon className="size-5 text-muted-foreground" />
+              <span
+                className={`flex size-9 items-center justify-center rounded-md bg-current/10 ${mod.iconColor}`}
+              >
+                <mod.icon className="size-5" />
+              </span>
               <span className="text-sm font-medium">{mod.label}</span>
               {!mod.implemented && (
                 <span className="text-xs text-muted-foreground">Coming soon</span>
